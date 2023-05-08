@@ -5,8 +5,8 @@
 	"private": true,
 	"scripts": {
 		"dev": "nodemon bin/www",
-		"start": "node bin/www",
-		"start:sit": "node bin/www --mode test"
+		"start": "ts-node bin/www",
+		"start:sit": "ts-node bin/www --mode test"
 	},
 	"dependencies": {
 		"@types/koa": "^2.13.6",

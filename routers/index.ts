@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-05-08 16:50:04
  * @LastEditors: dushuai
- * @LastEditTime: 2023-05-08 17:03:35
+ * @LastEditTime: 2023-05-08 18:48:54
  * @description: routes
  */
 const fs = require('fs')
@@ -21,7 +21,9 @@ router.get('/', async (ctx: Context) => {
 
 // node内fs模块的readdirSync方法可以拿到指定文件夹下的所有文件 再统一挂载
 fs.readdirSync(__dirname).forEach((file: string) => {
-  if (![''].includes(file)) {
+  if (!['index.ts'].includes(file)) {
+    console.log(file);
+
     let r = require('./' + file)
     router.use(`/${file.split('.')[0]}`, r.routes(), r.allowedMethods())
   }

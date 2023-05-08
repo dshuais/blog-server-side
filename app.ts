@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-05-08 15:46:53
  * @LastEditors: dushuai
- * @LastEditTime: 2023-05-08 17:34:45
+ * @LastEditTime: 2023-05-08 18:39:33
  * @description: app
  */
 const Koa = require('koa')
@@ -12,7 +12,7 @@ const error = require('koa-json-error')
 const cors = require('koa2-cors')
 const { historyApiFallback } = require('koa2-connect-history-api-fallback') // 解决history模式下刷寻not found的问题
 const Koa_session = require('koa-session') // 导入session缓存
-const router = require('/routers/')
+const router = require('./routers/index.ts')
 
 const app = new Koa()
 

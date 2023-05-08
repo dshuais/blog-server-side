@@ -2,14 +2,11 @@
  * @Author: dushuai
  * @Date: 2023-05-08 15:44:39
  * @LastEditors: dushuai
- * @LastEditTime: 2023-05-08 17:44:37
+ * @LastEditTime: 2023-05-08 18:37:19
  * @description: www
  */
-import { Server } from "http";
-
-const app = require('../app')
+const app = require('../app.ts')
 const http = require('http')
-
 
 /**
  * Get port from environment and store in Express.
@@ -22,7 +19,7 @@ const port = normalizePort(process.env.PORT || '3000');
  * Create HTTP server.
  */
 
-const server: Server = http.createServer(app.callback());
+const server = http.createServer(app.callback());
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -35,7 +32,7 @@ server.on('listening', onListening);
  * Normalize a port into a number, string, or false.
  */
 
-function normalizePort(val): number | boolean {
+function normalizePort(val) {
   var port = parseInt(val, 10);
 
   if (isNaN(port)) {
