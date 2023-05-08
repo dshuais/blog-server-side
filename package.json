@@ -5,12 +5,14 @@
 	"private": true,
 	"scripts": {
 		"dev": "nodemon bin/www",
-		"start": "node bin/www"
+		"start": "node bin/www",
+		"start:sit": "node bin/www --mode test"
 	},
 	"dependencies": {
 		"jsonwebtoken": "^9.0.0",
 		"koa": "^2.14.2",
 		"koa-body": "^6.0.1",
+		"koa-json-error": "^3.1.2",
 		"koa-router": "^12.0.0",
 		"koa-session": "^6.4.0",
 		"koa-static": "^5.0.0",

@@ -10,6 +10,9 @@ dependencies:
   koa-body:
     specifier: ^6.0.1
     version: 6.0.1
+  koa-json-error:
+    specifier: ^3.1.2
+    version: 3.1.2
   koa-router:
     specifier: ^12.0.0
     version: 12.0.0
@@ -681,6 +684,14 @@ packages:
       koa-compose: 4.1.0
     dev: false
 
+  /koa-json-error@3.1.2:
+    resolution: {integrity: sha512-nqfNwD4W+hYaJijFl+6qNSQJHbTS4vp+gXTdXl5U8YK2PVNzCF0HnLZwyKHaMeBebhanAgmfheQv96wLDjLRxg==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      lodash.compact: 3.0.1
+      lodash.curry: 4.1.1
+    dev: false
+
   /koa-router@12.0.0:
     resolution: {integrity: sha512-zGrdiXygGYW8WvrzeGsHZvKnHs4DzyGoqJ9a8iHlRkiwuEAOAPyI27//OlhoWdgFAEIM3qbUgr0KCuRaP/TCag==}
     engines: {node: '>= 12'}
@@ -762,6 +773,14 @@ packages:
       vary: 1.1.2
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /lodash.compact@3.0.1:
+    resolution: {integrity: sha512-2ozeiPi+5eBXW1CLtzjk8XQFhQOEMwwfxblqeq6EGyTxZJ1bPATqilY0e6g2SLQpP4KuMeuioBhEnWz5Pr7ICQ==}
+    dev: false
+
+  /lodash.curry@4.1.1:
+    resolution: {integrity: sha512-/u14pXGviLaweY5JI0IUzgzF2J6Ne8INyzAZjImcryjgkZ+ebruBxy2/JaOOkTqScddcYtakjhSaeemV8lR0tA==}
     dev: false
 
   /lodash@4.17.21:
