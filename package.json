@@ -4,7 +4,7 @@
 	"description": "",
 	"private": true,
 	"scripts": {
-		"dev": "nodemon --watch src/**/*.ts --exec \"ts-node\" bin/www",
+		"dev": "nodemon -e ts,tsx --exec \"ts-node\" bin/www",
 		"start:test": "ts-node bin/www --mode test",
 		"start": "ts-node bin/www"
 	},

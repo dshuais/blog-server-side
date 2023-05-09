@@ -2,10 +2,10 @@
  * @Author: dushuai
  * @Date: 2023-05-08 15:44:39
  * @LastEditors: dushuai
- * @LastEditTime: 2023-05-09 12:18:57
+ * @LastEditTime: 2023-05-09 14:55:45
  * @description: www
  */
-const app = require('../app.ts')
+const app = require('../app')
 const http = require('http')
 require('../config/config.env')
 
