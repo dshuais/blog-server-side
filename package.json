@@ -4,13 +4,14 @@
 	"description": "",
 	"private": true,
 	"scripts": {
-		"dev": "nodemon bin/www",
-		"start": "ts-node bin/www",
-		"start:sit": "ts-node bin/www --mode test"
+		"dev": "nodemon --watch src/**/*.ts --exec \"ts-node\" bin/www",
+		"start:test": "ts-node bin/www --mode test",
+		"start": "ts-node bin/www"
 	},
 	"dependencies": {
 		"@types/koa": "^2.13.6",
 		"@types/node": "^20.1.0",
+		"dotenv": "^16.0.3",
 		"jsonwebtoken": "^9.0.0",
 		"koa": "^2.14.2",
 		"koa-body": "^6.0.1",

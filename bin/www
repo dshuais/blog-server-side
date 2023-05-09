@@ -2,17 +2,18 @@
  * @Author: dushuai
  * @Date: 2023-05-08 15:44:39
  * @LastEditors: dushuai
- * @LastEditTime: 2023-05-08 18:37:19
+ * @LastEditTime: 2023-05-09 12:18:57
  * @description: www
  */
 const app = require('../app.ts')
 const http = require('http')
+require('../config/config.env')
 
 /**
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.APP_PORT || '3000');
 // app.set('port', port);
 
 /**
@@ -54,6 +55,5 @@ function normalizePort(val) {
 
 function onListening() {
   var addr = server.address();
-  console.log('server:>> ', addr);
-
+  console.log(`http server running at ${process.env.APP_HOST}:${addr.port}`)
 }
