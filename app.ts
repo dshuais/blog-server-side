@@ -2,11 +2,11 @@
  * @Author: dushuai
  * @Date: 2023-05-08 15:46:53
  * @LastEditors: dushuai
- * @LastEditTime: 2023-05-11 19:33:10
+ * @LastEditTime: 2023-05-11 20:34:05
  * @description: app
  */
 const Koa = require('koa')
-const KoaBody = require('koa-body')
+const { koaBody } = require('koa-body')
 const KoaStatic = require('koa-static') // 引入暴露默认资源的插件
 const error = require('koa-json-error')
 const cors = require('koa2-cors')
@@ -61,7 +61,7 @@ app.use(cors({ // node内解决跨域
 // const session = Koa_session(sessionConfig, app)
 // app.use(session)
 
-// app.use(KoaBody()) // 解析传参body的中间件 这个中间件可开启上传
+app.use(koaBody()) // 解析传参body的中间件 这个中间件可开启上传
 // app.use(KoaBody({
 //   multipart: true, // 开启上传
 //   formidable: {

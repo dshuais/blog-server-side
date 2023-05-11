@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-05-08 16:50:04
  * @LastEditors: dushuai
- * @LastEditTime: 2023-05-09 11:19:57
+ * @LastEditTime: 2023-05-11 20:11:35
  * @description: routes
  */
 const fs = require('fs')
@@ -23,7 +23,7 @@ router.get('/', async (ctx: Context) => {
 fs.readdirSync(__dirname).forEach((file: string) => {
   if (!['index.ts'].includes(file)) {
     let r = require('./' + file)
-    router.use(`/${file.split('.')[0]}`, r.routes(), r.allowedMethods())
+    router.use(`/${file.split('.')[1]}`, r.routes(), r.allowedMethods())
   }
 })
 
