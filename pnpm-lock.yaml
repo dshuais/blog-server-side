@@ -17,8 +17,8 @@ dependencies:
     specifier: ^2.14.2
     version: 2.14.2
   koa-body:
-    specifier: ^6.0.1
-    version: 6.0.1
+    specifier: 5.0.0
+    version: 5.0.0
   koa-json-error:
     specifier: ^3.1.2
     version: 3.1.2
@@ -121,13 +121,6 @@ packages:
     dependencies:
       '@types/connect': 3.4.35
       '@types/node': 20.1.0
-
-  /@types/co-body@6.1.0:
-    resolution: {integrity: sha512-3e0q2jyDAnx/DSZi0z2H0yoZ2wt5yRDZ+P7ymcMObvq0ufWRT4tsajyO+Q1VwVWiv9PRR4W3YEjEzBjeZlhF+w==}
-    dependencies:
-      '@types/node': 20.1.0
-      '@types/qs': 6.9.7
-    dev: false
 
   /@types/connect@3.4.35:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
@@ -378,8 +371,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /co-body@6.1.0:
-    resolution: {integrity: sha512-m7pOT6CdLN7FuXUcpuz/8lfQ/L77x8SchHCF4G0RBTJO20Wzmhn5Sp4/5WsKy8OSpifBSUrmg83qEqaDHdyFuQ==}
+  /co-body@5.2.0:
+    resolution: {integrity: sha512-sX/LQ7LqUhgyaxzbe7IqwPeTr2yfpfUIQ/dgpKo6ZI4y4lpQA0YxAomWIY+7I7rHWcG02PG+OuPREzMW/5tszQ==}
     dependencies:
       inflation: 2.0.0
       qs: 6.11.1
@@ -766,15 +759,12 @@ packages:
       tsscmp: 1.0.6
     dev: false
 
-  /koa-body@6.0.1:
-    resolution: {integrity: sha512-M8ZvMD8r+kPHy28aWP9VxL7kY8oPWA+C7ZgCljrCMeaU7uX6wsIQgDHskyrAr9sw+jqnIXyv4Mlxri5R4InIJg==}
+  /koa-body@5.0.0:
+    resolution: {integrity: sha512-nHwEODrQGiyKBILCWO8QSS40C87cKr2cp3y/Cw8u9Z8w5t0CdSkGm3+y9WK5BIAlPpo9tTw5RtSbxpVyG79vmw==}
     dependencies:
-      '@types/co-body': 6.1.0
       '@types/formidable': 2.0.6
-      '@types/koa': 2.13.6
-      co-body: 6.1.0
+      co-body: 5.2.0
       formidable: 2.1.1
-      zod: 3.21.4
     dev: false
 
   /koa-compose@4.1.0:
@@ -1370,8 +1360,4 @@ packages:
   /yn@3.1.1:
     resolution: {integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==}
     engines: {node: '>=6'}
-    dev: false
-
-  /zod@3.21.4:
-    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
     dev: false
