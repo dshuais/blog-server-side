@@ -4,9 +4,9 @@
 	"description": "",
 	"private": true,
 	"scripts": {
-		"dev": "nodemon -e ts,tsx --exec \"ts-node\" bin/www",
-		"start:test": "ts-node bin/www --mode test",
-		"start": "ts-node bin/www"
+		"dev": "nodemon -e ts,tsx --exec \"ts-node\" --files bin/www",
+		"start:test": "ts-node --files bin/www --mode test",
+		"start": "ts-node --files bin/www"
 	},
 	"dependencies": {
 		"@types/koa": "^2.13.6",
