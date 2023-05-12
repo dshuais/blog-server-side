@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-05-11 16:40:03
  * @LastEditors: dushuai
- * @LastEditTime: 2023-05-11 19:33:02
+ * @LastEditTime: 2023-05-12 16:44:43
  * @description: hello表
  */
 const { DataTypes } = require('sequelize')
@@ -35,7 +35,12 @@ const HelloModel = sequelize.define('t_hello', {
   }
 }, {
   tableName: 't_hello', // 这个属性设置 创建的表不会自动加s 按照用户写的名字来创建
-  timestamps: true // 创建表时自动添加createAt和updateAt 可以通过这个来禁用(创建和更新时间)
+  timestamps: true, // 创建表时自动添加createdAt和updatedAt 可以通过这个来禁用(创建和更新时间)
+  // 想要 updatedAt 但是希望名称叫做 update_time
+  updatedAt: 'update_time',
+  createdAt: 'create_time',
+  // 不想要 createdAt
+  // createdAt: false,
 })
 
 /**
