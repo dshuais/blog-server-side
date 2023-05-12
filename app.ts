@@ -1,11 +1,13 @@
+
 /*
  * @Author: dushuai
  * @Date: 2023-05-08 15:46:53
  * @LastEditors: dushuai
- * @LastEditTime: 2023-05-11 20:54:30
+ * @LastEditTime: 2023-05-12 15:57:35
  * @description: app
  */
 const Koa = require('koa')
+import { Context, Next } from "koa"
 const koaBody = require('koa-body')
 const KoaStatic = require('koa-static') // 引入暴露默认资源的插件
 const error = require('koa-json-error')
@@ -13,10 +15,11 @@ const cors = require('koa2-cors')
 const { historyApiFallback } = require('koa2-connect-history-api-fallback') // 解决history模式下刷寻not found的问题
 const Koa_session = require('koa-session') // 导入session缓存
 const router = require('./routers/index.ts')
-
+const errHandler = require('./lib/errHandler')
 // require('./lib/db')
 // require('./models')
 require('./models/index.create')
+const ERR = require('./constants/error')
 
 const app = new Koa()
 
@@ -61,6 +64,11 @@ app.use(cors({ // node内解决跨域
 // const session = Koa_session(sessionConfig, app)
 // app.use(session)
 
+/** 挂载errors 所有异常类型 */
+app.use(async (ctx: Context, next: Next) => {
+  ctx.errors = ERR
+  await next()
+})
 app.use(koaBody({
   multipart: true
 })) // 解析传参body的中间件 这个中间件可开启上传
@@ -77,13 +85,12 @@ app.use(koaBody({
 // app.use(KoaStatic(path.join(__dirname, '../../../angellone.uploads'))) // 默认暴露的静态资源
 // app.use(KoaStatic(path.join(__dirname, '../../../angellone.dshuais.com'))) // 默认暴露的静态资源 前端项目
 // app.use(parameter(app)) // 挂载parameter 表单验证中间件 他会向ctx上添加一个ctx.verifyParams()的方法 在里面进行校验
-
-// app.use(router.routes()).use(router.allowedMethods()) // 统一加载接口路由
-
-// app.on('error', errHandler) // 统一对错误进行处理
 //#endregion
 
 // 统一加载接口路由
 app.use(router.routes()).use(router.allowedMethods())
+
+// 统一对错误进行处理
+app.on('error', errHandler)
 
 module.exports = app

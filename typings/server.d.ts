@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-05-11 14:22:00
  * @LastEditors: dushuai
- * @LastEditTime: 2023-05-11 16:04:53
+ * @LastEditTime: 2023-05-12 15:08:04
  * @description: d.ts
  */
 
@@ -24,5 +24,14 @@ declare namespace ENV {
     MYSQL_PWD: string // 密码
     MYSQL_DB: string // 数据库名
     MYSQL_TYPE: string // 数据库dialect
+  }
+}
+
+/** 异常处理数据结构 */
+declare namespace ERR {
+  /** 抛出异常结构 */
+  interface Data {
+    code: number,
+    msg: string
   }
 }
