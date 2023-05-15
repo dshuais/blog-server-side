@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-05-10 11:01:44
  * @LastEditors: dushuai
- * @LastEditTime: 2023-05-12 17:58:48
+ * @LastEditTime: 2023-05-15 10:31:09
  * @description: 处理hello模块接口方法
  */
 import { Context } from "koa";
@@ -34,13 +34,14 @@ class HelloController {
 
   /** 查询所有数据 */
   async getHelloList(ctx: Context) {
-    const { title } = ctx.request.body
+    const { title } = ctx.query
     try {
       const data = await Hello.findAndCountAll({
         attributes: ['random', 'title', 'create_time', 'update_time'], // 特定的属性 传入数组 内的对象为最后查询后返回的字段
         where: {
+          status: 1,
           title: {
-            [Op.substring]: '2'
+            [Op.substring]: title || title === '0' ? title : ''
           }
         }
       })
