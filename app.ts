@@ -3,7 +3,7 @@
  * @Author: dushuai
  * @Date: 2023-05-08 15:46:53
  * @LastEditors: dushuai
- * @LastEditTime: 2023-05-12 15:57:35
+ * @LastEditTime: 2023-05-25 10:54:30
  * @description: app
  */
 const Koa = require('koa')
@@ -18,7 +18,7 @@ const router = require('./routers/index.ts')
 const errHandler = require('./lib/errHandler')
 // require('./lib/db')
 // require('./models')
-require('./models/index.create')
+require('./models/t.create')
 const ERR = require('./constants/error')
 
 const app = new Koa()

@@ -2,12 +2,12 @@
  * @Author: dushuai
  * @Date: 2023-05-10 11:01:44
  * @LastEditors: dushuai
- * @LastEditTime: 2023-05-15 10:31:09
+ * @LastEditTime: 2023-05-25 10:54:48
  * @description: 处理hello模块接口方法
  */
 import { Context } from "koa";
 const { Op } = require('sequelize')
-const Hello = require('../models/m.hello')
+const Hello = require('../models/t.hello')
 
 /** 处理hello模块接口方法 */
 class HelloController {
